@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Don Bosco — Guía de implementación</title>
+<!-- 1. Un solo stylesheet: tokens + componentes -->
+<link rel="stylesheet" href="casa-don-bosco.css">
+</head>
+<body>
+
+<!-- ═══ Cinta superior: superficie con degradado de banda ═══ -->
+<div class="band-gradient" style="display:flex;justify-content:center;gap:24px;align-items:center;padding:8px 24px;font-size:14px">
+  <span style="font-style:italic">“La educación es cosa del corazón” — San Juan Bosco</span>
+  <span style="opacity:.5">·</span>
+  <span>0412-9403020 / 0424-4132666</span>
+</div>
+
+<!-- ═══ Navegación: .nav + .nav-brand, CTA con .btn-primary (degradado) ═══ -->
+<nav class="nav" style="border-bottom:1px solid var(--color-divider)">
+  <span class="nav-brand" style="color:var(--color-accent-700)">Casa Don Bosco <span style="font-family:var(--font-body);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-2-700)">E.P.E.S</span></span>
+  <a href="#" aria-current="page">Inicio</a>
+  <a href="#">Quiénes Somos</a>
+  <a href="#">Cursos</a>
+  <a href="#" class="btn btn-primary">Preinscríbete ¡YA!</a>
+</nav>
+
+<main style="max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-4);display:flex;flex-direction:column;gap:var(--space-8)">
+
+  <!-- ═══ Hero: título Caprasimo, acentos de las rampas, imagen lavada en arco ═══ -->
+  <section style="display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-8);align-items:center">
+    <div>
+      <span class="tag tag-accent-2">✦ 75+ años · Naguanagua, Carabobo</span>
+      <h1 style="margin-top:var(--space-3)">Aquí cada joven encuentra <span style="color:var(--color-accent)">una familia</span> y <span style="color:var(--color-accent-2-700)">un oficio</span></h1>
+      <p class="text-muted" style="font-size:17px;max-width:480px">Casa Hogar de protección y Escuela Para Emprendedores Salesianos. Educamos con el corazón y capacitamos para el trabajo.</p>
+      <div style="display:flex;gap:var(--space-3);margin-top:var(--space-4)">
+        <a href="#" class="btn btn-primary" style="font-size:16px;padding:14px 28px">Comienza tu preinscripción</a>
+        <a href="#" class="btn btn-secondary" style="font-size:16px;padding:14px 28px">Conócenos</a>
+      </div>
+    </div>
+    <!-- Toda foto va en .washed; el arco es border-radius 180px arriba -->
+    <div class="washed" style="border-radius:180px 180px var(--radius-lg) var(--radius-lg)">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=60&auto=format&fit=crop" alt="Jóvenes estudiando" style="width:100%;height:340px;object-fit:cover">
+    </div>
+  </section>
+
+  <!-- ═══ Panel profundo: degradado --grad-deep para tarjetas protagonistas ═══ -->
+  <section class="panel-deep" style="border-radius:var(--radius-lg);padding:var(--space-8);display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow-lg)">
+    <div>
+      <h2 style="color:#fff">¿Listo para empezar?</h2>
+      <p style="margin:0;color:var(--color-accent-200)">Preinscripción en menos de 5 minutos.</p>
+    </div>
+    <a href="#" class="btn btn-primary" style="font-size:16px;padding:15px 32px;white-space:nowrap">Preinscríbete ¡YA!</a>
+  </section>
+
+  <!-- ═══ Cards: .card + .elev-sm, hover con elevación automática ═══ -->
+  <section>
+    <h2>Tarjetas de curso</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)">
+      <div class="card elev-sm" style="padding:0;overflow:hidden">
+        <div class="washed"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=60&auto=format&fit=crop" alt="Mantenimiento de PC" style="width:100%;height:150px;object-fit:cover"></div>
+        <div style="padding:var(--space-3) var(--space-4) var(--space-4);display:flex;flex-direction:column;gap:var(--space-2)">
+          <span class="card-kicker" style="color:var(--color-accent-2-700)">Tecnología</span>
+          <span class="card-title">Mantenimiento Técnico de PC</span>
+          <p class="card-body">Diagnóstico, reparación y mantenimiento de hardware y software.</p>
+          <a href="#" class="btn btn-secondary" style="align-self:flex-start">Preinscribirme →</a>
+        </div>
+      </div>
+      <div class="card elev-sm" style="padding:0;overflow:hidden">
+        <div class="washed"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=60&auto=format&fit=crop" alt="Laboratorio clínico" style="width:100%;height:150px;object-fit:cover"></div>
+        <div style="padding:var(--space-3) var(--space-4) var(--space-4);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;gap:var(--space-2)"><span class="tag tag-accent-2">Salud</span><span class="tag tag-outline">Con pasantías</span></div>
+          <span class="card-title">Asistente de Laboratorio Clínico</span>
+          <p class="card-body">Toma de muestras y apoyo en análisis clínicos con práctica real.</p>
+          <a href="#" class="btn btn-secondary" style="align-self:flex-start">Preinscribirme →</a>
+        </div>
+      </div>
+      <div class="card elev-sm" style="padding:0;overflow:hidden">
+        <div class="washed"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=60&auto=format&fit=crop" alt="Repostería" style="width:100%;height:150px;object-fit:cover"></div>
+        <div style="padding:var(--space-3) var(--space-4) var(--space-4);display:flex;flex-direction:column;gap:var(--space-2)">
+          <span class="card-kicker" style="color:var(--color-accent-2-700)">Gastronomía</span>
+          <span class="card-title">Repostería y Cocina</span>
+          <p class="card-body">Técnicas culinarias con visión de emprendimiento.</p>
+          <a href="#" class="btn btn-secondary" style="align-self:flex-start">Preinscribirme →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Botones y tags: todas las variantes ═══ -->
+  <section>
+    <h2>Botones y etiquetas</h2>
+    <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap">
+      <button class="btn btn-primary">Primario (degradado)</button>
+      <button class="btn btn-secondary">Secundario</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-primary" disabled>Deshabilitado</button>
+    </div>
+    <div style="display:flex;gap:var(--space-2);margin-top:var(--space-4);flex-wrap:wrap">
+      <span class="tag tag-accent">Inscripciones abiertas</span>
+      <span class="tag tag-accent-2">Quiénes somos</span>
+      <span class="tag tag-neutral">Neutral</span>
+      <span class="tag tag-outline">5 meses</span>
+    </div>
+  </section>
+
+  <!-- ═══ Formulario de preinscripción: .field / .input / .radio ═══ -->
+  <section>
+    <h2>Formulario (preinscripción)</h2>
+    <form class="card elev-sm" style="max-width:520px;gap:var(--space-3)" onsubmit="return false">
+      <div class="field">
+        <label for="nombre">Nombre completo</label>
+        <input class="input" id="nombre" type="text" placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="curso">Curso de interés</label>
+        <input class="input" id="curso" type="text" placeholder="Ej. Repostería y Cocina">
+      </div>
+      <div style="display:flex;gap:var(--space-4)">
+        <label class="radio"><input type="radio" name="turno" checked><span class="dot"></span>Mañana</label>
+        <label class="radio"><input type="radio" name="turno"><span class="dot"></span>Tarde</label>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Enviar preinscripción</button>
+    </form>
+  </section>
+
+  <!-- ═══ Rampas de color como referencia visual ═══ -->
+  <section>
+    <h2>Rampas de color</h2>
+    <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-bottom:var(--space-2)">
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-100)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-200)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-300)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-400)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-500)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-600)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-700)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-800)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-900)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-100)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-200)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-300)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-400)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-500)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-600)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-700)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-800)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-accent-2-900)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-100)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-200)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-300)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-400)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-500)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-600)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-700)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-800)"></div>
+      <div style="height:44px;border-radius:var(--radius-sm);background:var(--color-neutral-900)"></div>
+    </div>
+    <p class="text-muted" style="font-size:13px">Filas: accent (azul profundo) · accent-2 (azul cielo) · neutral. Pasos 100→900.</p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer con degradado ═══ -->
+<footer class="footer-gradient" style="padding:var(--space-8) var(--space-6);display:flex;justify-content:space-between;align-items:center;font-size:14px">
+  <div>E.P.E.S Casa Don Bosco Servicios<br>Redoma de Guaparo, Naguanagua · Valencia 2005, Carabobo</div>
+  <div style="text-align:right">0412-9403020 · 0424-4132666<br>YouTube: Coordinación Pedagógica</div>
+</footer>
+
+</body>
+</html>
